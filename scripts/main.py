@@ -26,40 +26,24 @@ if st.button("Search!"):
     if genre == "All Genres":
         genre = None
     results = search(query, genre, min_rating, top_k)
-    st.write("Result:")
-    st.dataframe(results)
+    st.title("Results:")
 
-    st.write('Cards')
     try:
-        for index, row in results.iterrows():
-            st.write(f"**{row['Title']}**")
-            st.write(row['Overview'])
-            st.write(f"**Director:** {row['Director']}")
-            st.write(f"**Genre:** {row['Genre']}")
-            st.write(f"**Year:** {row['Year']}")
-            st.write(f"**Rating:** {row['Rating']}")
-            st.write(f"**Score:** {row['Score']}")
-    except:
-        pass
-
-    st.write('Grid')
-    try:
-        col1, col2, col3 = st.beta_columns(3)  # Split the screen into three columns
-        for index, row in results.iterrows():
-            with col1:
-                st.image("movie_image_url.jpg", use_container_width=True)
-            with col2:
-                st.write(f"**{row['Title']}**")
+        with st.container():
+            st.divider()
+            for index, row in results.iterrows():
+                st.header(f"**{row['Title']}**")
+                st.write(row['Overview'])
                 st.write(f"**Director:** {row['Director']}")
-                st.write(f"**Rating:** {row['Rating']}")
-            with col3:
                 st.write(f"**Genre:** {row['Genre']}")
-                st.write(f"**Year:** {row['Year']}")
-                st.write(f"**Score:** {row['Score']}")
-
+                st.write(f"**Year:** {row['year']}")
+                st.metric("**Rating:**" , value = row['Rating'])
+                st.metric(label="**Score:**", value = row['Score'] )
+                st.divider()
     except:
         pass
 
+    
  
 
 
