@@ -29,7 +29,6 @@ if st.button("Search!"):
     st.write("Result:")
     st.dataframe(results)
 
-    st.line
     st.write('Cards')
     try:
         for index, row in results.iterrows():
@@ -43,7 +42,6 @@ if st.button("Search!"):
     except:
         pass
 
-    st.line
     st.write('Grid')
     try:
         col1, col2, col3 = st.beta_columns(3)  # Split the screen into three columns
