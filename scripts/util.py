@@ -15,9 +15,10 @@ def load_model():
 def load_index():
     global index
     if index is None:
-        pinecone_api = st.secrets["API_KEY"]
+        pinecone_api = st.secrets["PINECODE_API_KEY"]
+        enviroment = st.secrets["PINECODE_ENVIROMENT"]
         index_name = st.secrets["INDEX_NAME"]
-        pinecone.init(api_key=pinecone_api, environment = index_name)
+        pinecone.init(api_key=pinecone_api, environment = enviroment)
         index = pinecone.Index(index_name)
 
 load_model()
