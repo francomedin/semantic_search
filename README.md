@@ -10,8 +10,7 @@ Welcome to the Movie Semantic Search project! This project allows you to search 
 - Retrieve a specified number of relevant movie results.
 
 ## Demo
-
-
+https://movie-search.streamlit.app/
 ## Getting Started
 
 Follow these steps to set up and run the Movie Semantic Search project on your local machine:
@@ -58,4 +57,4 @@ streamlit run main.py
 ### Acknowledgments
 
 - Pinecone for providing the semantic search infrastructure.
-- Hugging Face Transformers for Sentence-Transformers.
+- Sentence-Transformers.
