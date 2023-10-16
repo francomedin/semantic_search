@@ -27,7 +27,7 @@ if st.button("Search!"):
         genre = None
     results = search(query, genre, min_rating, top_k)
     st.title("Results:")
-
+    st.dataframe(results)
     try:
         with st.container():
             st.divider()
@@ -38,7 +38,7 @@ if st.button("Search!"):
                 st.write(f"**Genre:** {row['Genre']}")
                 st.write(f"**Year:** {row['year']}")
                 st.metric("**Rating:**" , value = row['Rating'])
-                st.metric(label="**Score:**", value = row['Score'] )
+                st.metric(label="**Score:**", value = f"{row['Score']*100}%")
                 st.divider()
     except:
         pass
