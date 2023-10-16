@@ -38,7 +38,7 @@ if st.button("Search!"):
                 st.write(f"**Genre:** {row['Genre']}")
                 st.write(f"**Year:** {row['year']}")
                 st.metric("**Rating:**" , value = row['Rating'])
-                st.metric(label="**Score:**", value = f"{row['Score']*100}%")
+                st.metric(label="**Score:**", value = f"{round(row['Score']*100,2)}%")
                 st.divider()
     except:
         pass
